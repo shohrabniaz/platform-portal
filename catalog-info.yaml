@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: gitops-platform
+  description: GitOps platform with ArgoCD
+  links:
+    - url: https://github.com/YOUR_ORG/gitops-platform
+      title: Repository
+spec:
+  type: service
+  lifecycle: experimental
+  owner: guests
