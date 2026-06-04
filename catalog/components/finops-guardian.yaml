@@ -1,0 +1,13 @@
+﻿
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: finops-guardian
+  description: Cloud cost optimization and leak detection
+  links:
+    - url: https://github.com/shohrabniaz/finops-guardian
+      title: Repository
+spec:
+  type: service
+  lifecycle: experimental
+  owner: guests

@@ -1,0 +1,13 @@
+﻿
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: gitops-platform
+  description: Argo CD app-of-apps and GitOps overlays
+  links:
+    - url: https://github.com/shohrabniaz/gitops-platform
+      title: Repository
+spec:
+  type: service
+  lifecycle: experimental
+  owner: guests

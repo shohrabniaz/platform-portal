@@ -1,0 +1,13 @@
+﻿
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: platform-portal
+  description: Backstage developer portal catalog
+  links:
+    - url: https://github.com/shohrabniaz/platform-portal
+      title: Repository
+spec:
+  type: service
+  lifecycle: experimental
+  owner: guests

@@ -1,0 +1,13 @@
+﻿
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ai-incident-copilot
+  description: AI-assisted Kubernetes incident RCA
+  links:
+    - url: https://github.com/shohrabniaz/ai-incident-copilot
+      title: Repository
+spec:
+  type: service
+  lifecycle: experimental
+  owner: guests

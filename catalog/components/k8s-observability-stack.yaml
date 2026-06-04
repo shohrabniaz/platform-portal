@@ -1,0 +1,13 @@
+﻿
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: k8s-observability-stack
+  description: Prometheus, Grafana, Loki on Kubernetes
+  links:
+    - url: https://github.com/shohrabniaz/k8s-observability-stack
+      title: Repository
+spec:
+  type: service
+  lifecycle: experimental
+  owner: guests

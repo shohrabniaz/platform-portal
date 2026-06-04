@@ -1,0 +1,18 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: portfolio-repos
+  description: Shohrab Niaz DevOps portfolio repositories
+spec:
+  type: url
+  targets:
+    - ./components/devsecops-pipeline.yaml
+    - ./components/terraform-modules.yaml
+    - ./components/gitops-platform.yaml
+    - ./components/azure-landing-zone-terraform.yaml
+    - ./components/k8s-observability-stack.yaml
+    - ./components/sentinel-soc-lab.yaml
+    - ./components/ai-incident-copilot.yaml
+    - ./components/finops-guardian.yaml
+    - ./components/platform-portal.yaml
+    - ./components/cloud-security-scanner.yaml

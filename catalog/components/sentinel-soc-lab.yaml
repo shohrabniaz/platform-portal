@@ -1,0 +1,13 @@
+﻿
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: sentinel-soc-lab
+  description: Azure Sentinel SOC lab and detections
+  links:
+    - url: https://github.com/shohrabniaz/sentinel-soc-lab
+      title: Repository
+spec:
+  type: service
+  lifecycle: experimental
+  owner: guests

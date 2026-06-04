@@ -1,0 +1,13 @@
+﻿
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: azure-landing-zone-terraform
+  description: Azure enterprise landing zone starter
+  links:
+    - url: https://github.com/shohrabniaz/azure-landing-zone-terraform
+      title: Repository
+spec:
+  type: service
+  lifecycle: experimental
+  owner: guests

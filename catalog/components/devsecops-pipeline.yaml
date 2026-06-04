@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: devsecops-pipeline
+  description: DevSecOps CI with Semgrep, Checkov, Trivy, SBOM
+  links:
+    - url: https://github.com/shohrabniaz/devsecops-pipeline
+      title: Repository
+spec:
+  type: service
+  lifecycle: production
+  owner: guests

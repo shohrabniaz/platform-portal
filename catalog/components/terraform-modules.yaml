@@ -1,0 +1,13 @@
+﻿
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: terraform-modules
+  description: Reusable Terraform modules for Azure hub-spoke and AKS
+  links:
+    - url: https://github.com/shohrabniaz/terraform-modules
+      title: Repository
+spec:
+  type: service
+  lifecycle: experimental
+  owner: guests
