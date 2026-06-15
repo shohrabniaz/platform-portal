@@ -1,11 +1,40 @@
 # Platform Portal (Backstage)
 
-Internal developer platform — service catalog, software templates, TechDocs.
+Internal developer platform — service catalog for the DevOps portfolio.
 
-**Phase 2 — Week 9.**
+## Catalog
+
+All portfolio components are defined under `catalog/` and registered via `catalog-info.yaml`.
+
+| Component | Repo |
+|-----------|------|
+| devsecops-pipeline | CI/CD security gates |
+| terraform-modules | Reusable IaC modules |
+| gitops-platform | Argo CD app-of-apps |
+| ai-incident-copilot | K8s incident RCA |
+| cloud-security-scanner | Azure posture checks |
+| finops-guardian | Cost leak detection |
+| sentinel-soc-lab | Sentinel KQL rules |
+
+## Run Backstage on kind/DOKS
 
 ```powershell
-npx @backstage/create-app@latest
+kubectl config use-context kind-gitops-lab   # or DOKS context
+.\scripts\install-backstage-local.ps1
+kubectl port-forward -n backstage svc/backstage 7007:7007
 ```
 
-Use `catalog-info.yaml` in each portfolio repo for catalog registration.
+Open http://localhost:7007
+
+## Local GitOps lab
+
+```powershell
+.\scripts\bootstrap-gitops-local.ps1 -UseKind
+.\scripts\verify-gitops-lab.ps1
+```
+
+## Phase 2 status
+
+- [x] Catalog YAML for all 10 portfolio repos
+- [x] Helm install script for Backstage
+- [ ] Custom software templates (optional)
