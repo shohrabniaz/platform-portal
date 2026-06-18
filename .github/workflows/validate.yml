@@ -24,4 +24,7 @@ jobs:
           for p in pathlib.Path('catalog').rglob('*.yaml'):
               list(yaml.safe_load_all(p.read_text()))
               print('OK', p)
+          yaml.safe_load(pathlib.Path('app-config.yaml').read_text())
+          print('OK app-config.yaml')
           "
+      - run: test -f docker-compose.yml

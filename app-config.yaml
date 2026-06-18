@@ -1,0 +1,43 @@
+app:
+  title: Platform Portal
+  baseUrl: http://localhost:7007
+
+organization:
+  name: Shohrab Niaz
+
+backend:
+  baseUrl: http://localhost:7007
+  listen:
+    port: 7007
+    host: 0.0.0.0
+  cors:
+    origin: http://localhost:7007
+    methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
+    credentials: true
+  database:
+    client: pg
+    connection:
+      host: postgres
+      port: 5432
+      user: backstage
+      password: backstage
+
+catalog:
+  import:
+    entityFilename: catalog-info.yaml
+  rules:
+    - allow: [Component, System, API, Resource, Location, Group, User]
+  locations:
+    - type: file
+      target: /catalog/catalog-info.yaml
+      rules:
+        - allow: [Location]
+    - type: file
+      target: /catalog/catalog/all-repos.yaml
+      rules:
+        - allow: [Component, System, API, Resource]
+
+auth:
+  environment: development
+  providers:
+    guest: {}

@@ -2,39 +2,35 @@
 
 Internal developer platform — service catalog for the DevOps portfolio.
 
-## Catalog
-
-All portfolio components are defined under `catalog/` and registered via `catalog-info.yaml`.
-
-| Component | Repo |
-|-----------|------|
-| devsecops-pipeline | CI/CD security gates |
-| terraform-modules | Reusable IaC modules |
-| gitops-platform | Argo CD app-of-apps |
-| ai-incident-copilot | K8s incident RCA |
-| cloud-security-scanner | Azure posture checks |
-| finops-guardian | Cost leak detection |
-| sentinel-soc-lab | Sentinel KQL rules |
-
-## Run Backstage on kind/DOKS
+## Run locally (Docker)
 
 ```powershell
-kubectl config use-context kind-gitops-lab   # or DOKS context
-.\scripts\install-backstage-local.ps1
-kubectl port-forward -n backstage svc/backstage 7007:7007
+cd "D:\New folder"
+.\scripts\run-backstage-local.ps1
 ```
 
-Open http://localhost:7007
+Open http://localhost:7007 — guest auth in development mode.
 
-## Local GitOps lab
+Catalog loads all 10 portfolio components from `catalog/`.
+
+## Catalog structure
+
+```
+catalog-info.yaml          # Root location
+catalog/all-repos.yaml     # Aggregates component YAMLs
+catalog/components/*.yaml  # One file per repo
+```
+
+## Stop
 
 ```powershell
-.\scripts\bootstrap-gitops-local.ps1 -UseKind
-.\scripts\verify-gitops-lab.ps1
+cd platform-portal
+docker compose down
 ```
 
-## Phase 2 status
+## Phase 2
 
-- [x] Catalog YAML for all 10 portfolio repos
-- [x] Helm install script for Backstage
-- [ ] Custom software templates (optional)
+- [x] Portfolio catalog YAML for all repos
+- [x] Docker Compose local Backstage
+- [ ] TechDocs per repo (optional)
+- [ ] Deploy Backstage to DOKS (after `bootstrap-doks.ps1`)
