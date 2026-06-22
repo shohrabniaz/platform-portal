@@ -2,16 +2,16 @@
 
 Internal developer platform — service catalog for the DevOps portfolio.
 
-## Run locally (Docker)
+## Run locally (Docker) — experimental
+
+The Janus showcase image requires full plugin configuration; the compose stack may crash-loop without additional setup. The **catalog YAML** in `catalog/` is the stable deliverable for Backstage registration.
 
 ```powershell
 cd "D:\New folder"
-.\scripts\run-backstage-local.ps1
+.\scripts\run-backstage-local.ps1   # postgres + backstage on :7007
 ```
 
-Open http://localhost:7007 — guest auth in development mode.
-
-Catalog loads all 10 portfolio components from `catalog/`.
+If the backstage container keeps restarting, use the catalog files directly or scaffold with `npx @backstage/create-app@latest`.
 
 ## Catalog structure
 
