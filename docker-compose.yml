@@ -30,7 +30,7 @@ services:
       POSTGRES_USER: backstage
       POSTGRES_PASSWORD: backstage
     volumes:
-      - ./app-config.yaml:/opt/app-root/src/app-config.yaml:ro
+      - ./app-config.local.yaml:/opt/app-root/src/app-config.local.yaml:ro
       - ./catalog-info.yaml:/catalog/catalog-info.yaml:ro
       - ./catalog:/catalog/catalog:ro
 

@@ -1,0 +1,26 @@
+app:
+  title: Platform Portal
+  baseUrl: http://localhost:7007
+
+organization:
+  name: Shohrab Niaz
+
+backend:
+  database:
+    client: pg
+    connection:
+      host: postgres
+      port: 5432
+      user: backstage
+      password: backstage
+
+catalog:
+  locations:
+    - type: file
+      target: /catalog/catalog-info.yaml
+      rules:
+        - allow: [Location]
+    - type: file
+      target: /catalog/catalog/all-repos.yaml
+      rules:
+        - allow: [Component, System, API, Resource]
